@@ -1,1 +1,39 @@
-<h1>display</h1>
+<table class="table table-condensed" class="table table-striped">
+	<tr>
+		<td>title</td>
+		<td>description</td>
+		<td>video</td>
+		<td>genre</td>
+		<td>edit</td>
+		<td>delete</td>
+	</tr>
+
+	
+	<% @rows.each do |row| %>
+		<tr>
+			<td>
+				<%= row['title'] %>
+			</td>
+			<td>
+				<%= row['description'] %>
+			</td>
+			<td>
+				<iframe width="350" height="200" src="http://www.youtube.com/embed/<%= row['url'].split('=').last %>" frameborder="0" allowfullscreen></iframe>
+			</td>
+			<td>
+				<%= row['genre'] %>
+			</td>
+			<td>
+				<a href="edit/<%= row['id'] %>">
+					edit
+				</a>
+			</td>
+			<td>
+				<a href="video/<%= row['id'] %>/delete">
+					delete
+				</a>
+			</td>
+		</tr>
+	<% end %>
+	</table>
+ 

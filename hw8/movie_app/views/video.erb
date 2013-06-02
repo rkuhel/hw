@@ -1,0 +1,23 @@
+<table class="table table-striped" class="table table-condensed">	<tr>
+		<td>title</td>
+		<td>description</td>
+		<td>video</td>
+		<td>genre</td>
+	</tr>
+
+		<tr>
+			<td>
+				<%= row['title'] %>
+			</td>
+			<td>
+				<%= row['description'] %>
+			</td>
+			<td>
+				<iframe width="420" height="315" src="<%= row['url'].split('=').last %>" frameborder="0" allowfullscreen></iframe>
+			</td>
+			<td>
+				<%= row['genre'] %>
+			</td>
+		</tr>
+</table>
+ 
